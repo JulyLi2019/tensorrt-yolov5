@@ -10,8 +10,8 @@ INPUT_WIDTH = 640
 
 def preprocess(image, mask_y=150):
     img = image.copy()
-    image[mask_y-5:mask_y, :, :] = 0
-    img[:mask_y, :, :] = 0
+    #image[mask_y-5:mask_y, :, :] = 0
+    #img[:mask_y, :, :] = 0
     img = cv2.resize(img, (INPUT_WIDTH, INPUT_HEIGHT))
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img = np.transpose(np.array(img, dtype=np.float32, order='C'), (2, 0, 1))
